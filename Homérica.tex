@@ -6,7 +6,7 @@
 \usepackage[paperwidth=17.50cm,paperheight=25.00cm,top=2.20cm,inner=2.65cm,outer=1.65cm,bottom=2.20cm]{geometry}
 \setmainlanguage{spanish}
 \setmainfont{Alt Standard}[RawFeature=lnum]
-\usepackage[noeledsec,nocritical,nofamiliar,noledgroup,nopenalties]{reledmac}
+\usepackage[noeledsec,nocritical,nofamiliar,noledgroup]{reledmac}
 \linenummargin{right}
 \setlength{\linenumsep}{-65pt}
 \usepackage[breaklinks=true,hidelinks]{hyperref}
@@ -29,12 +29,11 @@
 \newcommand{\ehctr}{\emph{\textbf{E.-H.\textsuperscript{(4)}}}}
 \newcommand{\neh}{\emph{\textbf{N. E.-H.}}}
 %
-\renewcommand{\thefootnote}{\textbf{\arabic{footnote}}}
-\newcommand{\head}[1]{\def\mihead{#1}\thispagestyle{empty}} \def\mihead{} \newpagestyle{editio}{\sethead[\thepage][\ifx\mihead\empty\else\mihead\fi][]{}{\ifx\mihead\empty\else\mihead\fi}{\thepage}} \pagestyle{editio}
-%
 \newcommand{\separator}{\noindent-- -- -- -- -- --\par}
 %
 \usepackage{metalogo}
+\usepackage{lettrine}
+\AtBeginDocument{\setcounter{ballast}{50}}
 %
 %
 \begin{document}
@@ -63,7 +62,7 @@ El sistema de siglado para agilizar las referencias es el siguiente: \ehuno = \e
 \newpage
 %
 \pagenumbering{gobble}
-\section*{\centering\huge\textsc{Ilíada}}
+\section*{\raggedleft\fontsize{30}{14}\textsc{Ilíada}}
 \addcontentsline{toc}{section}{\emph{\textsc{Ilíada}}}
 \repage
 %

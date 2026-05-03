@@ -1,0 +1,22 @@
+\NeedsTeXFormat{LaTeX2e}
+\ProvidesPackage{editio}
+%
+\RequirePackage{titleps}
+%\newpagestyle{editio}{\setfoot[\thepage][][]{}{}{\thepage}}
+%\newpagestyle{editio}{\sethead[][][\thepage]{\thepage}{}{}}
+\newcommand{\head}[1]{\def\myhead{#1}\thispagestyle{empty}} \def\myhead{}
+\newpagestyle{editio}{\sethead[][\ifx\myhead\empty\else\myhead\fi][\thepage]{\thepage}{\ifx\myhead\empty\else\myhead\fi}{}}
+\pagestyle{editio}
+\RequirePackage{microtype}
+\setlength{\parindent}{0.6cm}
+\sloppy
+\raggedbottom
+\vfuzz=0pt
+\usepackage{enumitem}
+\setlist{nosep,noitemsep,parsep=0pt}
+\newcommand{\repage}{\relax\vfil\newpage}
+\newcommand{\enpage}{\relax\vfil}
+\renewcommand{\thefootnote}{\textbf{\arabic{footnote}}}
+%Para el salto de línea en obras poéticas.
+%\newsavebox{\dbox}
+%\newcommand{\dlgo}[2]{\sbox{\dbox}{#1}\parbox[t]{\linewidth}{#1\strut\\[0pt]\hspace*{\wd\dbox}\hspace{\fontdimen2\font}#2\strut}}
